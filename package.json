@@ -1,6 +1,6 @@
 {
   "name": "react-redux-modal",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Barebones modal framework for react with redux",
   "main": "lib/index.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "modal"
   ],
   "author": "Alex Henderson",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/alexghenderson/react-redux-modal/issues"
   },
