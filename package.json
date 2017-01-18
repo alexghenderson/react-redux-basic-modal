@@ -1,5 +1,5 @@
 {
-  "name": "react-redux-modal",
+  "name": "react-redux-basic-modal",
   "version": "0.1.0",
   "description": "Barebones modal framework for react with redux",
   "main": "lib/index.js",

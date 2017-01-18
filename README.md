@@ -1,4 +1,4 @@
-# react-redux-modal
+# react-redux-basic-modal
 
 Barebones, easy modal module for React/Redux.
 
@@ -12,7 +12,7 @@ Can be customized by providing a wrapping component that will wrap any component
 Include the reducer in your combineReducer call:
 
 ```js
-import modal from 'react-redux-modal';
+import modal from 'react-redux-basic-modal';
 import {combineReducers} from 'react-redux';
 
 export combineReducers({
@@ -27,7 +27,7 @@ Add the modal component to your application or root component
 import React, {createElement} from 'react'
 import {render} from 'react-dom';
 import {Provider} from 'react-redux';
-import Modal from 'react-redux-modal';
+import Modal from 'react-redux-basic-modal';
 import {store} from './store';
 
 const modalMap = {
@@ -44,7 +44,7 @@ render((
 Dispatch an open action, and optionally pass parameters:
 
 ```js
-import {openModal} from 'react-redux-modal';
+import {openModal} from 'react-redux-basic-modal';
 store.dispatch(openModal({modalId: 'testModal', parameters: {message: 'Hi!'}}));
 ```
 
@@ -53,5 +53,5 @@ This module will react to the openModal action and render the specified modal.
 An unconnected component is also provided if you want to customize either the reducer name, or provide the modal information yourself.
 
 ```js
-import {UnconnectedModal} from 'react-redux-modal';
+import {UnconnectedModal} from 'react-redux-basic-modal';
 ```
