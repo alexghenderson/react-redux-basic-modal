@@ -1,4 +1,4 @@
-# react-redux-modal [![Travis][build-badge]][build] [![npm package][npm-badge]][npm]
+# react-redux-modal
 
 Barebones, easy modal module for React/Redux.
 
