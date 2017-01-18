@@ -1,14 +1,14 @@
 import {MODAL_OPEN, MODAL_CLOSE} from 'action/types';
 
 const initialState = {
-  modalId: null,
+  current: null,
   parameters: {},
   isOpen: false,
 };
 
 const handlers = {
-  [MODAL_OPEN]: ({action: {payload: {modalId, parameters = {}}}}) => ({
-    modalId: modalId ? modalId : null,
+  [MODAL_OPEN]: (state, {payload: {modal = null, parameters = {}}}) => ({
+    current: modal,
     parameters: parameters,
     isOpen: true,
   }),
