@@ -1,5 +1,5 @@
 import reducer from 'reducer';
-import Modal from 'modal';
+import Modal, {Modal as UnconnectedModal} from 'modal';
 
-export {Modal, reducer};
+export {Modal, UnconnectedModal, reducer};
 export * from 'action';
