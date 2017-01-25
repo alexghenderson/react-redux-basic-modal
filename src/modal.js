@@ -13,7 +13,7 @@ const Modal = ({wrapper: Wrapper = null,
     ? modals[current]
     : () => (<div/>);
 
-  const WrappedComponent = (Wrapper === null)
+  const WrappedComponent = (Wrapper !== null)
   ? <Wrapper>
       <Component close={close} {...parameters}/>
     </Wrapper>
@@ -22,7 +22,6 @@ const Modal = ({wrapper: Wrapper = null,
 };
 
 const mapStateToProps = (state, {reducer = 'modal'}) => ({
-  isOpen: state[reducer].isOpen,
   current: state[reducer].current,
   parameters: state[reducer].parameters,
 });

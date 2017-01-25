@@ -11,19 +11,17 @@ describe('Modal Reducer Spec', function() {
     const expected = {
       current: null,
       parameters: {},
-      isOpen: false,
     };
     expect(state).to.deep.equal(expected);
   });
   it('Should handle OPEN_MODAL action', function() {
-    const action = openModal({modal: 'test', parameters: {test: true}});
+    const action = openModal('test', {test: true});
     const state = reducer(undefined, action);
     const expected = {
       current: 'test',
       parameters: {
         test: true,
       },
-      isOpen: true,
     };
     expect(state).to.deep.equal(expected);
   });
@@ -33,28 +31,22 @@ describe('Modal Reducer Spec', function() {
     const expected = {
       current: null,
       parameters: {},
-      isOpen: false,
     };
     expect(state).to.deep.equal(expected);
   });
   it('Should handle both OPEN and CLOSE actions sequentially', function() {
     let state = undefined;
-    state = reducer(state, openModal({
-      modal: 'test',
-      parameters: {test: true},
-    }));
+    state = reducer(state, openModal('test', {test: true}));
     expect(state).to.deep.equal({
       current: 'test',
       parameters: {
         test: true,
       },
-      isOpen: true,
     });
     state = reducer(state, closeModal());
     expect(state).to.deep.equal({
       current: null,
       parameters: {},
-      isOpen: false,
     });
   });
 });
