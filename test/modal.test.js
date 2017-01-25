@@ -13,11 +13,12 @@ describe('Modal', function() {
   };
 
   it('should render without error', function() {
-    expect(() => (
+    const modal = () => (
       TestUtils.renderIntoDocument(
         <Modal modals={modals} close={close}/>
       )
-    )).to.not.throw();
+    );
+    expect(modal).to.not.throw();
   });
 
   it('should render nothing when none are selected', function() {
@@ -29,7 +30,7 @@ describe('Modal', function() {
 
   it('should render selected modal', function() {
     const wrapper = render(
-      <Modal modals={modals} close={close} current={'test'} isOpen/>
+      <Modal modals={modals} close={close} current='test' isOpen/>
     );
     expect(wrapper.html()).to.equal('<span>Testing</span>');
   });
