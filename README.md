@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/alexghenderson/react-redux-basic-modal.svg?branch=develop)](https://travis-ci.org/alexghenderson/react-redux-basic-modal)
+
 # react-redux-basic-modal
 
 Barebones, easy modal module for React/Redux.
