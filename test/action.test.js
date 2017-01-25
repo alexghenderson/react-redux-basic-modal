@@ -5,7 +5,7 @@ import {MODAL_OPEN, MODAL_CLOSE} from 'action/types';
 
 describe('Open Modal Action Spec', function() {
   it('Should accept no modal parameters', function() {
-    const action = openModal({modal: 'testId'});
+    const action = openModal('testId');
     const expected = {
       type: MODAL_OPEN,
       payload: {
@@ -16,7 +16,7 @@ describe('Open Modal Action Spec', function() {
     expect(action).to.deep.equal(expected);
   });
   it('Should accept modal parameters', function() {
-    const action = openModal({modal: 'testId', parameters: {test: true}});
+    const action = openModal('testId', {test: true});
     const expected = {
       type: MODAL_OPEN,
       payload: {

@@ -1,2 +1,2 @@
-export const MODAL_OPEN = 'react-redux-modal/MODAL_OPEN';
-export const MODAL_CLOSE = 'react-redux-modal/MODAL_CLOSE';
+export const MODAL_OPEN = '@@react-redux-basic-modal/MODAL_OPEN';
+export const MODAL_CLOSE = '@@react-redux-basic-modal/MODAL_CLOSE';
