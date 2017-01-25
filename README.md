@@ -9,49 +9,57 @@ Can be customized by providing a wrapping component that will wrap any component
 
 ## Usage
 
-Include the reducer in your combineReducer call:
-
 ```js
-import modal from 'react-redux-basic-modal';
-import {combineReducers} from 'react-redux';
-
-export combineReducers({
-  modal,
-  ...
-})
-```
-
-Add the modal component to your application or root component
-
-```js
-import React, {createElement} from 'react'
+import React from 'react';
 import {render} from 'react-dom';
-import {Provider} from 'react-redux';
-import Modal from 'react-redux-basic-modal';
-import {store} from './store';
+import {createStore, combineReducers} from 'redux';
+import {combineReducers} from 'react-redux';
+import {modalReducer, openModal} from 'react-redux-basic-modal';
 
-const modalMap = {
-  testModal: ({message}) => (<div>{message}</div>)
-}
+/*
+ *  Include the modal reducer in the reducers
+ */
+const reducers = combineReducers({
+  modal: modalReducer,
+  ...
+});
+
+const store = createStore(reducers);
+
+/*
+ *  Create the modal map, mapping ids to modal components
+ */
+
+const modals = {
+  testModal: () => (<div className='modal'> This is a modal! </div>),
+};
+
+/*
+ *  Include the root modal component somewhere under the redux Provider
+ */
 
 render((
   <Provider store={store}>
-    <Modal modals={modalMap}/>
+    <Modal modals={modals}/>
   </Provider>
 ), document.getElementById('app'));
+
+/*
+ *  Dispatch openModal action to display the selected modal
+ */
+
+store.dispatch(openModal('testModal'));
+
+ /*
+  * Close the active modal by dispatching closeModal
+  */
+
+store.dispatch(closeModal());
 ```
 
-Dispatch an open action, and optionally pass parameters:
+You can optionally provide an object to the openModal call as the second argument
+which will be passed as properties to the active modal. Additionally, you can pass
+a wrapper element to the root Modal component which will wrap all rendered modals.
 
-```js
-import {openModal} from 'react-redux-basic-modal';
-store.dispatch(openModal({modalId: 'testModal', parameters: {message: 'Hi!'}}));
-```
-
-This module will react to the openModal action and render the specified modal.
-
-An unconnected component is also provided if you want to customize either the reducer name, or provide the modal information yourself.
-
-```js
-import {UnconnectedModal} from 'react-redux-basic-modal';
-```
+Modal components that are rendered will also be passed a closeModal function mapped
+to the store, allowing all modals to close themselves without additional connecting.
