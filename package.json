@@ -1,6 +1,6 @@
 {
   "name": "react-redux-basic-modal",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Barebones modal framework for react with redux",
   "main": "lib/index.js",
   "scripts": {
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexghenderson/react-redux-modal.git"
+    "url": "git+https://github.com/alexghenderson/react-redux-basic-modal.git"
   },
   "keywords": [
     "react",
@@ -25,9 +25,9 @@
   "author": "Alex Henderson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alexghenderson/react-redux-modal/issues"
+    "url": "https://github.com/alexghenderson/react-redux-basic-modal/issues"
   },
-  "homepage": "https://github.com/alexghenderson/react-redux-modal#readme",
+  "homepage": "https://github.com/alexghenderson/react-redux-basic-modal#readme",
   "devDependencies": {
     "babel-cli": "^6.22.2",
     "babel-register": "^6.18.0",
